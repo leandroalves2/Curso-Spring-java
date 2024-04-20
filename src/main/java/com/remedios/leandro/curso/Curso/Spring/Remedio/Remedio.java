@@ -4,6 +4,8 @@ import com.remedios.leandro.curso.Curso.Spring.DTO.DadosCadastroRemedioDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -27,16 +29,12 @@ public class Remedio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String nome;
-
     @Enumerated(EnumType.STRING)
     private Via via;
-
     private String lote;
     private int quantidade;
-    private String validade;
-
+    private LocalDate validade;
     @Enumerated(EnumType.STRING)
     private Laboratorio laboratorio;
 
